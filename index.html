@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Ticket Management</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="w-full h-full">
+    <header>
+        <nav class="w-[90%] mx-auto">
+            <div class="navbar bg-base-100">
+                <div class="navbar-start">
+                    <div class="dropdown">
+                        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h8m-8 6h16" />
+                            </svg>
+                        </div>
+                        <ul tabindex="0"
+                            class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                            <li><a>Home</a></li>
+                            <li><a>About</a></li>
+                            <li><a>Destination</a></li>
+                            <li><a>Search</a></li>
+                        </ul>
+                    </div>
+                    <a class="btn btn-ghost text-xl text-green-500 font-extrabold">P-Ticket</a>
+                </div>
+                <div class="navbar-center hidden lg:flex">
+                    <ul class="menu menu-horizontal px-1">
+                        <li><a>Home</a></li>
+                        <li><a>About</a></li>
+                        <li><a>Destination</a></li>
+                        <li><a>Search</a></li>
+                    </ul>
+                </div>
+                <div class="navbar-end">
+                    <a class="btn">Bus</a>
+                </div>
+            </div>
+        </nav>
+        <div class="flex flex-col justify-center items-center gap-10 
+                 w-[90%] h-[95vh] mx-auto rounded-3xl bg-[url('./images/banner.png')] bg-cover bg-center text-white">
+            <h1 class="text-4xl lg:text-6xl font-extrabold">End-to-End Travel With</h1>
+            <h1 class="text-4xl lg:text-6xl font-extrabold text-green-400">P Paribahon</h1>
+            <p class="text-sm text-center lg:text-md font-bold">Yes, you can run unit tests and view the results
+                directly within the app. The integrated testing features
+                allow for a streamlined .</p>
+            <button class="btn btn-active btn-accent">Buy Tickets</button>
+        </div>
+    </header>
+    <main class="w-[90%] mx-auto h-[70vh] mt-10">
+        <div class="container mx-auto">
+            <div class="bg-gray-100 p-4 flex items-center justify-between">
+                <div>
+                    <h1 class="text-2xl font-bold">Greenline Paribahan</h1>
+                    <p class="text-gray-500">Coach-009-WEB | AC, Business</p>
+                </div>
+                <div class="bg-green-100 text-green-500 px-2 py-1 rounded-md">
+                    <p id="countSeat">40 Seats Left</p>
+                </div>
+            </div>
+
+
+            <div class="p-4 bg-white rounded-md mt-4">
+                <div class="flex justify-between">
+                    <p>Route</p>
+                    <p>Dhaka - Sylhet</p>
+                </div>
+                <div class="divider"></div>
+                <div class="flex justify-between">
+                    <p>Departure Time</p>
+                    <p>9:00 PM</p>
+                </div>
+                <div class="divider"></div>
+                <div class="flex justify-between">
+                    <p>Boarding Point</p>
+                    <p>Laxmipur</p>
+                </div>
+                <div class="divider"></div>
+                <div class="flex justify-between">
+                    <p>Dropping Point</p>
+                    <p>Bogura</p>
+                </div>
+                <div class="divider"></div>
+                <div class="flex justify-between">
+                    <p>Est. Time</p>
+                    <p>11 Hour</p>
+                </div>
+                <div class="divider"></div>
+            </div>
+
+            <div class="flex justify-between items-center mt-4">
+                <div class="flex items-center">
+
+                    <p class="ml-2 text-xl font-bold">550 Taka</p>
+                </div>
+                <div class="flex items-center">
+
+                    <p class="ml-2 text-xl font-bold">Per Seat</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- seat management dom function -->
+
+        <div class="mt-10 w-full flex flex-col md:flex-row justify-between gap-4">
+            <div class="md:w-1/2 border-r-2 border-dashed pr-5">
+                <div class="w-full">
+                    <p>Select your seat</p>
+                    <div class="divider"></div>
+                    <div class="flex justify-between">
+                        <div class="flex items-center gap-3">
+                            <img src="./images/seat-green.png" alt="">
+                            <p>Available</p>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <img src="./images/seat-green-filled.png" alt="">
+                            <p>Selected</p>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                </div>
+                <div id="btn-div" class="flex justify-between w-full">
+                    <div class="grid grid-cols-2 gap-4">
+                        <button class="btn">A1</button>
+                        <button class="btn">A2</button>
+                        <button class="btn">B1</button>
+                        <button class="btn">B2</button>
+                        <button class="btn">C1</button>
+                        <button class="btn">C2</button>
+                        <button class="btn">D1</button>
+                        <button class="btn">D2</button>
+                        <button class="btn">E1</button>
+                        <button class="btn">E2</button>
+                        <button class="btn">F1</button>
+                        <button class="btn">F2</button>
+                        <button class="btn">G1</button>
+                        <button class="btn">G2</button>
+                        <button class="btn">H1</button>
+                        <button class="btn">H2</button>
+                        <button class="btn">I1</button>
+                        <button class="btn">I2</button>
+                        <button class="btn">J1</button>
+                        <button class="btn">J2</button>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <button class="btn">A3</button>
+                        <button class="btn">A4</button>
+                        <button class="btn">B3</button>
+                        <button class="btn">B4</button>
+                        <button class="btn">C3</button>
+                        <button class="btn">C4</button>
+                        <button class="btn">D3</button>
+                        <button class="btn">D4</button>
+                        <button class="btn">E3</button>
+                        <button class="btn">E4</button>
+                        <button class="btn">F3</button>
+                        <button class="btn">F4</button>
+                        <button class="btn">G3</button>
+                        <button class="btn">G4</button>
+                        <button class="btn">H3</button>
+                        <button class="btn">H4</button>
+                        <button class="btn">I3</button>
+                        <button class="btn">I4</button>
+                        <button class="btn">J3</button>
+                        <button class="btn">J4</button>
+                    </div>
+                </div>
+            </div>
+            <div class="md:w-1/2">
+                <div class="container mx-auto">
+                    <div class="bg-white p-4 rounded-md mt-4">
+                        <table class="w-full">
+                            <thead>
+                                <tr>
+                                    <th class="text-left px-2 py-1">Seat</th>
+                                    <th class="text-left px-2 py-1">Class</th>
+                                    <th class="text-right px-2 py-1">Price</th>
+                                </tr>
+                            </thead>
+                            <tbody id="bookedSeatDet">
+                                <!-- <tr>
+                                    <td class="text-left px-2 py-1">C2</td>
+                                    <td class="text-left px-2 py-1">Economy</td>
+                                    <td class="text-right px-2 py-1">550</td>
+                                </tr> -->
+                            </tbody>
+                        </table>
+            
+                        <div class="flex justify-between mt-2">
+                            <p class="text-left px-2 py-1">Total Price</p>
+                            <p id="totalPrice" class="text-right px-2 py-1">BDT 0</p>
+                        </div>
+            
+                        <div class="flex justify-between mt-2">
+                            <input class="outline- w-full p-2" type="text" id="couponField" placeholder="Have any coupon?">
+                            <button id="applyBtn" class="btn btn-primary" disabled onclick="handleCoupon()">Apply</button>
+                        </div>
+            
+                        <div class="flex justify-between mt-2">
+                            <p class="text-left px-2 py-1">Grand Total</p>
+                            <p id="discountPrice" class="text-right px-2 py-1">BDT ***</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="container mx-auto">
+                    <div class="bg-white p-4 rounded-md mt-4">
+                        <form class="space-y-4">
+                            <div class="flex flex-col gap-3">
+                                <label for="passenger-name" class="mr-2">Passenger Name*</label>
+                                <input type="text" id="passenger-name" class="w-full outline-none border border-gray-300 rounded-md px-3 py-2" required>
+                            </div>
+                            <div class="flex flex-col gap-3">
+                                <label for="phone-number" class="mr-2">Phone Number*</label>
+                                <input type="text" id="phone-number" class="w-full outline-none border border-gray-300 rounded-md px-3 py-2" required>
+                            </div>
+                            <div class="flex flex-col gap-3">
+                                <label for="email" class="mr-2">Email ID</label>
+                                <input type="email" id="email" class="w-full outline-none border border-gray-300 rounded-md px-3 py-2">
+                            </div>
+                            <button class="bg-green-500 text-white w-full px-4 py-2 rounded-md">Next</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer></footer>
+
+    <script src="/js/main.js"></script>
+</body>
+
+</html>
