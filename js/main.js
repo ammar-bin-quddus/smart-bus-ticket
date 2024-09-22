@@ -5,10 +5,9 @@ const applyBtn = document.getElementById("applyBtn");
 const totalPrice = document.getElementById("totalPrice");
 const couponField = document.getElementById("couponField");
 const discountPrice = document.getElementById("discountPrice");
-console.log(couponField);
+const discountView = document.getElementById("discountView");
+//console.log(couponField);
 
-// const seatPrice = document.getElementById("seatPrice");
-// console.log(seatPrice.innerText)
 
 let totalSeat = 40;
 let countClickBtn = 0;
@@ -46,20 +45,32 @@ seatBtn.forEach((elem) => {
 
 })
 
-let discountCoupon1 = totalSeatPrice * 0.15;
-let discountCoupon2 = totalSeatPrice * 0.20;
-console.log(discountCoupon1)
+
+//console.log(discountCoupon1)
 function handleCoupon() {
+    let discountCoupon1 = totalSeatPrice * 0.15;
+    let discountCoupon2 = totalSeatPrice * 0.20;
+
     let coupon1 = "NEW50";
     let coupon2 = "Couple 20";
     if (couponField.value === coupon1) {
         let grandTotalCoupon1 = totalSeatPrice - discountCoupon1;
 
+        discountView.innerHTML = `
+                            <p class="text-left px-2 py-1">Discount</p>
+                            <p id="totalPrice" class="text-right px-2 py-1">-BDT ${discountCoupon1}</p>
+                            `
+       
         discountPrice.innerText = `BDT ${grandTotalCoupon1}`;
+        //console.log(grandTotalCoupon1)
     }
     if (couponField.value === coupon2) {
         let grandTotalCoupon2 = totalSeatPrice - discountCoupon2;
 
+        discountView.innerHTML = `
+                            <p class="text-left px-2 py-1">Discount</p>
+                            <p id="totalPrice" class="text-right px-2 py-1">-BDT ${discountCoupon2}</p>
+                            `
         discountPrice.innerText = `BDT ${grandTotalCoupon2}`;
     }
 }
