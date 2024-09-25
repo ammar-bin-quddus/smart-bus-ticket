@@ -6,6 +6,8 @@ const totalPrice = document.getElementById("totalPrice");
 const couponField = document.getElementById("couponField");
 const discountPrice = document.getElementById("discountPrice");
 const discountView = document.getElementById("discountView");
+const passengerName = document.getElementById("passenger-name").value;
+const phoneNumber = document.getElementById("phone-number").value;
 //console.log(couponField);
 
 

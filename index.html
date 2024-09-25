@@ -193,17 +193,19 @@
                                 </tr> -->
                             </tbody>
                         </table>
-            
+
                         <div class="flex justify-between mt-2">
                             <p class="text-left px-2 py-1">Total Price</p>
                             <p id="totalPrice" class="text-right px-2 py-1">BDT 0</p>
                         </div>
-            
+
                         <div id="discountView" class="flex justify-between mt-2">
-                            <input class="outline- w-full p-2" type="text" id="couponField" placeholder="Have any coupon?">
-                            <button id="applyBtn" class="btn btn-primary" disabled onclick="handleCoupon()">Apply</button>
+                            <input class="outline- w-full p-2" type="text" id="couponField"
+                                placeholder="Have any coupon?">
+                            <button id="applyBtn" class="btn btn-primary" disabled
+                                onclick="handleCoupon()">Apply</button>
                         </div>
-            
+
                         <div class="flex justify-between mt-2">
                             <p class="text-left px-2 py-1">Grand Total</p>
                             <p id="discountPrice" class="text-right px-2 py-1">BDT ***</p>
@@ -215,17 +217,21 @@
                         <form class="space-y-4">
                             <div class="flex flex-col gap-3">
                                 <label for="passenger-name" class="mr-2">Passenger Name*</label>
-                                <input type="text" id="passenger-name" class="w-full outline-none border border-gray-300 rounded-md px-3 py-2" required>
+                                <input type="text" id="passenger-name"
+                                    class="w-full outline-none border border-gray-300 rounded-md px-3 py-2" required>
                             </div>
                             <div class="flex flex-col gap-3">
                                 <label for="phone-number" class="mr-2">Phone Number*</label>
-                                <input type="text" id="phone-number" class="w-full outline-none border border-gray-300 rounded-md px-3 py-2" required>
+                                <input type="text" id="phone-number"
+                                    class="w-full outline-none border border-gray-300 rounded-md px-3 py-2" required>
                             </div>
                             <div class="flex flex-col gap-3">
                                 <label for="email" class="mr-2">Email ID</label>
-                                <input type="email" id="email" class="w-full outline-none border border-gray-300 rounded-md px-3 py-2">
+                                <input type="email" id="email"
+                                    class="w-full outline-none border border-gray-300 rounded-md px-3 py-2">
                             </div>
-                            <button class="bg-green-500 text-white w-full px-4 py-2 rounded-md">Next</button>
+                            <!-- <button class="bg-green-500 text-white w-full px-4 py-2 rounded-md">Next</button> -->
+                            <label for="my_modal_6" class="btn btn-primary w-full" disabled>Next</label>
                         </form>
                     </div>
                 </div>
@@ -234,6 +240,17 @@
     </main>
     <footer></footer>
 
+
+    <input type="checkbox" id="my_modal_6" class="modal-toggle" />
+    <div class="modal" role="dialog">
+        <div class="modal-box">
+            <h3 class="text-lg font-bold">Hello!</h3>
+            <p class="py-4">This modal works with a hidden checkbox!</p>
+            <div class="modal-action">
+                <label for="my_modal_6" class="btn">Close!</label>
+            </div>
+        </div>
+    </div>
     <script src="/js/main.js"></script>
 </body>
 
